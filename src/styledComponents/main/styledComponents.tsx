@@ -39,7 +39,11 @@ export const MTitle = styled.h2`
   font-family: main_m;
   letter-spacing: 2px;
 `;
-
+export const STitle = styled.h3`
+  color: var(--main);
+  font-family: main_m;
+  letter-spacing: 2px;
+`;
 export const Label = styled.p`
   color: var(--main);
   font-family: main_m;
@@ -57,6 +61,12 @@ export const Checkbox = styled.div`
   transition: background-color 0.1s;
   background: transparent;
   cursor: pointer;
+  &::before {
+    opacity: 0;
+  }
+  &::after {
+    opacity: 0;
+  }
 `;
 export const Button = styled.button`
   height: 55px;
@@ -69,6 +79,9 @@ export const Button = styled.button`
   letter-spacing: 1px;
   font-size: 18px;
   font-weight: bold;
-  transition: background-color 0.1s;
+  transition: background-color 0.3s;
   cursor: pointer;
+  &:hover {
+    background-color: var(--main-hover);
+  }
 `;

@@ -1,3 +1,29 @@
 .Checked {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--main) !important;
+}
+.Checked:before {
+  content: "";
+  position: absolute;
+  height: 6px;
+  left: 4px;
+  bottom: 4px;
+  width: 2px;
+  background-color: var(--block);
+  rotate: -45deg;
+  opacity: 1 !important;
+}
+.Checked:after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  bottom: 4px;
+  left: 9px;
+  width: 2px;
+  background-color: var(--block);
+  rotate: 45deg;
+  opacity: 1 !important;
 }

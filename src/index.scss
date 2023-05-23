@@ -2,7 +2,9 @@
     --bg: #f1f4fa;
     --block: #ffffff;
     --main: #000000;
+    --main-hover: #121212;
     --input-bg: #fafafa;
+    --button-hover: #eeeeee;
     --input-placeholder: #b8b8b8;
     --input-color: #262626;
     --nav-title: #a6a6a6;
@@ -40,14 +42,13 @@ body {
     background-color: var(--bg);
     padding: 20px;
     min-height: 100vh;
-    height: 100vh;
 }
 #root {
     height: 100%;
     width: 100%;
 }
 .Content {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
 }
 p {

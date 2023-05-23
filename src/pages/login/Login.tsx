@@ -5,8 +5,26 @@ import {
   Label,
   Logo,
   MTitle,
+  STitle,
 } from "../../styledComponents/main/styledComponents";
-import "./Login.css";
+import {
+  CheckBoxRow,
+  FormLogin,
+  ImageSide,
+  InputBlock,
+  LoginContent,
+  LoginFormBlock,
+  LoginInput,
+  LoginSide,
+  LoginSideContent,
+  OptionRow,
+  PLeft,
+} from "./LoginStyles";
+
+import GoogleIcon from "../../images/icons/soc/google.png";
+import FacebookIcon from "../../images/icons/soc/facebook.png";
+import DiscordIcon from "../../images/icons/soc/discord.png";
+
 import styled from "styled-components";
 
 export default function Login() {
@@ -16,49 +34,13 @@ export default function Login() {
         <LoginSideContent>
           <Logo></Logo>
           <LoginForm />
+          <SocialLogin />
         </LoginSideContent>
       </LoginSide>
       <ImageSide></ImageSide>
     </LoginContent>
   );
 }
-
-const LoginContent = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  background-color: var(--block);
-  border-radius: 30px;
-  overflow: hidden;
-`;
-
-const LoginSide = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 50%;
-  padding: 60px;
-`;
-
-const LoginSideContent = styled.div`
-  height: 100%;
-  width: 100%;
-  max-width: 600px;
-`;
-
-const ImageSide = styled.div`
-  height: 100%;
-  width: 50%;
-  border-radius: 30px;
-  background: linear-gradient(
-    100.06deg,
-    #000000 31.35%,
-    #2e2e2e 85.26%,
-    #000000 98.28%
-  );
-`;
 
 function LoginForm() {
   const [checked, setChecked] = useState(false);
@@ -86,56 +68,71 @@ function LoginForm() {
     </LoginFormBlock>
   );
 }
-const LoginFormBlock = styled.div`
-  margin-top: 60px;
-`;
-const InputBlock = styled.div``;
-const FormLogin = styled.form`
-  margin-top: 60px;
+function SocialLogin() {
+  return (
+    <SocialLoginContent>
+      <STitle>or continue with open account</STitle>
+      <SocialRow>
+        <SocialButton>
+          <img src={GoogleIcon} alt="GoogleIcon" /> Google
+        </SocialButton>
+        <SocialButton>
+          <img src={FacebookIcon} alt="GoogleIcon" /> Facebook
+        </SocialButton>
+        <SocialButton>
+          <img src={DiscordIcon} alt="GoogleIcon" /> Discord
+        </SocialButton>
+      </SocialRow>
+      <NotRegistered>
+        not registered yet? <Marked>Try Sign Up</Marked>
+      </NotRegistered>
+      <CopyRight>© Copyright Vision 2023 </CopyRight>
+    </SocialLoginContent>
+  );
+}
+
+const SocialLoginContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  margin-top: 50px;
 `;
-const LoginInput = styled.input`
-  margin-top: 10px;
-  height: 45px;
-  width: 100%;
-  max-width: 700px;
-  background-color: var(--input-bg);
-  border: 0;
-  outline: none;
-  padding: 0 15px;
-  font-size: 18px;
-  color: var(--input-color);
-  font-family: main_m;
-  font-weight: bold;
-  letter-spacing: 2px;
-  &::placeholder {
-    color: var(--input-placeholder);
-  }
-`;
-const OptionRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 20px;
-`;
-const CheckBoxRow = styled.div`
+const SocialRow = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
-  cursor: pointer;
-  user-select: none;
 `;
 
-const PLeft = styled.p`
-  position: relative;
+const SocialButton = styled.button`
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 15px;
+  background-color: var(--input-bg);
+  color: var(--main);
+  border: 0;
+  height: 60px;
+  width: 180px;
+  font-family: main_m;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 10px;
   cursor: pointer;
-  user-select: none;
-  margin-left: auto;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: var(--button-hover);
+  }
+`;
+const NotRegistered = styled.p`
+  color: var(--nav-li);
+`;
+const Marked = styled.a`
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  color: var(--main);
+  cursor: pointer;
   &::before {
     content: "";
     position: absolute;
@@ -148,4 +145,8 @@ const PLeft = styled.p`
   &:hover:before {
     width: 100%;
   }
+`;
+const CopyRight = styled.p`
+  color: var(--nav-li);
+  font-size: 14px;
 `;
