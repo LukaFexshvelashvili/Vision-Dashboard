@@ -1,0 +1,63 @@
+:root {
+  --bg: #f1f4fa;
+  --block: #ffffff;
+  --main: #000000;
+  --input-bg: #fafafa;
+  --input-placeholder: #b8b8b8;
+  --input-color: #262626;
+  --nav-title: #a6a6a6;
+  --nav-li: #99b2c6;
+  --alert-bg: #fa5757;
+  --green: #3fb8a9;
+  --yellow: #f8b917;
+  --red: #fa5757;
+  --sales-title: #2c2c2c;
+  --sales-description: #747474;
+  --list-item: #747474;
+}
+
+@font-face {
+  font-family: logo_f;
+  src: url("./fonts/ClashDisplay-Medium.otf");
+}
+@font-face {
+  font-family: main_m;
+  src: url("./fonts/Quicksand-Medium.ttf");
+}
+@font-face {
+  font-family: main_sb;
+  src: url("./fonts/Quicksand-SemiBold.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  padding: 20px;
+  min-height: 100vh;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.Content {
+  height: 100%;
+  width: 100%;
+}
+
+p {
+  color: var(--main);
+  font-family: main_m;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: bold;
+}
