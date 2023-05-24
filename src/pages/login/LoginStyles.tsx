@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const LoginFormBlock = styled.div`
   margin-top: 60px;
+  transition: opacity 1s;
 `;
 export const InputBlock = styled.div``;
 export const FormLogin = styled.form`
@@ -91,14 +92,79 @@ export const LoginSideContent = styled.div`
   max-width: 600px;
 `;
 
-export const ImageSide = styled.div`
+export const ImageSideContent = styled.div`
+  position: relative;
+  overflow: hidden;
   min-height: 100%;
   width: 50%;
   border-radius: 30px;
+  display: flex;
+  justify-content: center;
   background: linear-gradient(
     100.06deg,
     #000000 31.35%,
     #2e2e2e 85.26%,
     #000000 98.28%
   );
+`;
+
+export const SocialLoginContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
+  transition: opacity 1s;
+`;
+export const SocialRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+`;
+
+export const SocialButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background-color: var(--input-bg);
+  color: var(--main);
+  border: 0;
+  height: 60px;
+  width: 180px;
+  font-family: main_m;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: var(--button-hover);
+  }
+`;
+export const NotRegistered = styled.p`
+  color: var(--nav-li);
+`;
+export const Marked = styled.a`
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  color: var(--main);
+  cursor: pointer;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    background-color: var(--main);
+    transition: width 0.2s;
+  }
+  &:hover:before {
+    width: 100%;
+  }
+`;
+export const CopyRight = styled.p`
+  color: var(--nav-li);
+  font-size: 14px;
 `;

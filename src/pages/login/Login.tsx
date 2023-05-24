@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button,
   Checkbox,
@@ -9,43 +9,70 @@ import {
 } from "../../styledComponents/main/styledComponents";
 import {
   CheckBoxRow,
+  CopyRight,
   FormLogin,
-  ImageSide,
+  ImageSideContent,
   InputBlock,
   LoginContent,
   LoginFormBlock,
   LoginInput,
   LoginSide,
   LoginSideContent,
+  Marked,
+  NotRegistered,
   OptionRow,
   PLeft,
+  SocialButton,
+  SocialLoginContent,
+  SocialRow,
 } from "./LoginStyles";
 
 import GoogleIcon from "../../images/icons/soc/google.png";
 import FacebookIcon from "../../images/icons/soc/facebook.png";
 import DiscordIcon from "../../images/icons/soc/discord.png";
+import Bg1 from "../../images/bg/objects/login1.png";
+import Bg2 from "../../images/bg/objects/login2.png";
 
 import styled from "styled-components";
 
 export default function Login() {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    const getTout = setTimeout(() => {
+      setLoaded(true);
+    }, 300);
+    return () => {
+      clearTimeout(getTout);
+    };
+  }, []);
   return (
     <LoginContent>
       <LoginSide>
         <LoginSideContent>
-          <Logo></Logo>
+          <Logo className={loaded ? "" : "getTr3"} />
           <LoginForm />
           <SocialLogin />
         </LoginSideContent>
       </LoginSide>
-      <ImageSide></ImageSide>
+      <ImageSide />
     </LoginContent>
   );
 }
 
 function LoginForm() {
   const [checked, setChecked] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    const getTout = setTimeout(() => {
+      setLoaded(true);
+    }, 500);
+    return () => {
+      clearTimeout(getTout);
+    };
+  }, []);
+
   return (
-    <LoginFormBlock>
+    <LoginFormBlock className={loaded ? "" : "getTr3"}>
       <MTitle>Login to your account</MTitle>
       <FormLogin>
         <InputBlock>
@@ -69,8 +96,17 @@ function LoginForm() {
   );
 }
 function SocialLogin() {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    const getTout = setTimeout(() => {
+      setLoaded(true);
+    }, 700);
+    return () => {
+      clearTimeout(getTout);
+    };
+  }, []);
   return (
-    <SocialLoginContent>
+    <SocialLoginContent className={loaded ? "" : "getTr3"}>
       <STitle>or continue with open account</STitle>
       <SocialRow>
         <SocialButton>
@@ -91,62 +127,66 @@ function SocialLogin() {
   );
 }
 
-const SocialLoginContent = styled.div`
+function ImageSide() {
+  const [loaded, setLoaded] = useState(false);
+  const [loaded2, setLoaded2] = useState(false);
+  useEffect(() => {
+    const getTout = setTimeout(() => {
+      setLoaded(true);
+    }, 400);
+    const getTout2 = setTimeout(() => {
+      setLoaded2(true);
+    }, 700);
+    return () => {
+      clearTimeout(getTout);
+      clearTimeout(getTout2);
+    };
+  }, []);
+  return (
+    <ImageSideContent>
+      <ImgObj1 src={Bg1} alt="bgDecor" className={loaded ? "" : "getTr1"} />
+      <ImgObj2 src={Bg2} alt="bgDecor" className={loaded ? "" : "getTr2"} />
+      <ImageSideTexter>
+        <Logo White className={loaded ? "" : "getTr3"} />
+        <ImageTexter className={loaded2 ? "" : "getTr3"}>
+          Powerfull and Easy to use Marketing Dashboard Analytic
+        </ImageTexter>
+      </ImageSideTexter>
+    </ImageSideContent>
+  );
+}
+
+const ImgObj1 = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  transition: transform 1.5s, rotate 1.5s;
+`;
+const ImgObj2 = styled.img`
+  position: absolute;
+  top: 50px;
+  right: 0;
+  user-select: none;
+  transition: transform 1.5s, rotate 1.5s;
+`;
+const ImageSideTexter = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  margin-top: 50px;
+  gap: 25px;
+  position: absolute;
+  width: 80%;
+  bottom: 55px;
+  min-height: 100px;
+  color: var(--block);
 `;
-const SocialRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 15px;
-`;
-
-const SocialButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  background-color: var(--input-bg);
-  color: var(--main);
-  border: 0;
-  height: 60px;
-  width: 180px;
+const ImageTexter = styled.h1`
+  color: var(--block);
   font-family: main_m;
-  font-size: 18px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  &:hover {
-    background-color: var(--button-hover);
-  }
-`;
-const NotRegistered = styled.p`
-  color: var(--nav-li);
-`;
-const Marked = styled.a`
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  color: var(--main);
-  cursor: pointer;
-  &::before {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -5px;
-    background-color: var(--main);
-    transition: width 0.2s;
-  }
-  &:hover:before {
-    width: 100%;
-  }
-`;
-const CopyRight = styled.p`
-  color: var(--nav-li);
-  font-size: 14px;
+  font-size: 48px;
+  line-height: 65px;
+  width: 100%;
+  max-width: 490px;
+  letter-spacing: 2px;
+  transition: opacity 1s;
 `;

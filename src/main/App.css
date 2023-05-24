@@ -27,3 +27,15 @@
   rotate: 45deg;
   opacity: 1 !important;
 }
+
+.getTr1 {
+  transform: translateY(-100%) translateX(-100%) rotate(45deg);
+}
+
+.getTr2 {
+  transform: translateX(100%) rotate(-45deg);
+}
+
+.getTr3 {
+  opacity: 0;
+}
