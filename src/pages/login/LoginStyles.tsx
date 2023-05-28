@@ -35,6 +35,13 @@ export const OptionRow = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const CheckBoxRow = styled.div`
   display: flex;
@@ -63,6 +70,9 @@ export const PLeft = styled.p`
   &:hover:before {
     width: 100%;
   }
+  @media (max-width: 500px) {
+    margin: 0 auto;
+  }
 `;
 export const LoginContent = styled.div`
   display: flex;
@@ -72,6 +82,9 @@ export const LoginContent = styled.div`
   background-color: var(--block);
   border-radius: 30px;
   overflow: hidden;
+  @media (max-width: 1240px) {
+    flex-direction: column;
+  }
 `;
 
 export const LoginSide = styled.div`
@@ -81,6 +94,13 @@ export const LoginSide = styled.div`
   height: 100%;
   width: 50%;
   padding: 40px;
+  @media (max-width: 1240px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    padding: 40px 10px;
+  }
 `;
 
 export const LoginSideContent = styled.div`
@@ -106,6 +126,10 @@ export const ImageSideContent = styled.div`
     #2e2e2e 85.26%,
     #000000 98.28%
   );
+  @media (max-width: 1240px) {
+    width: 100%;
+    min-height: 650px;
+  }
 `;
 
 export const SocialLoginContent = styled.div`
@@ -119,6 +143,10 @@ export const SocialRow = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap;
+  @media (max-width: 500px) {
+    justify-content: center;
+  }
 `;
 
 export const SocialButton = styled.button`

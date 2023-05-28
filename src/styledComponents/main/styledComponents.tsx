@@ -21,8 +21,8 @@ const LogoElements = ({
           fill="#616161"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M22.7863 4.60337C27.6206 5.20339 31.963 7.98479 34.518 12.2164L40.3689 21.9067C43.4416 26.9958 43.4416 33.3685 40.3689 38.4576L34.518 48.1479C31.9635 52.3787 27.6223 55.1599 22.7892 55.7606C17.9549 55.1606 13.6125 52.3792 11.0575 48.1476L5.20665 38.4572C2.13392 33.3681 2.13392 26.9955 5.20665 21.9064L11.0575 12.2161C13.612 7.98528 17.9532 5.20414 22.7863 4.60337Z"
           fill="white"
         />
@@ -40,8 +40,8 @@ const LogoElements = ({
           fill="#C9D9FA"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M23.3774 4.33451C28.2117 4.93453 32.5541 7.71593 35.1091 11.9476L40.96 21.6379C44.0327 26.727 44.0327 33.0996 40.96 38.1887L35.1091 47.8791C32.5546 52.1099 28.2134 54.891 23.3803 55.4918C18.546 54.8917 14.2036 52.1103 11.6486 47.8787L5.79771 38.1884C2.72498 33.0993 2.72498 26.7266 5.79771 21.6375L11.6486 11.9472C14.2031 7.71642 18.5443 4.93528 23.3774 4.33451Z"
           fill="black"
         />
@@ -116,11 +116,17 @@ export const MTitle = styled.h2`
   color: var(--main);
   font-family: main_m;
   letter-spacing: 2px;
+  @media (max-width: 500px) {
+    text-align: center;
+  }
 `;
 export const STitle = styled.h3`
   color: var(--main);
   font-family: main_m;
   letter-spacing: 2px;
+  @media (max-width: 500px) {
+    text-align: center;
+  }
 `;
 export const Label = styled.p`
   color: var(--main);
