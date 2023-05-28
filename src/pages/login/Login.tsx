@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   Button,
   Checkbox,
@@ -32,12 +32,17 @@ import FacebookIcon from "../../images/icons/soc/facebook.png";
 import DiscordIcon from "../../images/icons/soc/discord.png";
 import Bg1 from "../../images/bg/objects/login1.png";
 import Bg2 from "../../images/bg/objects/login2.png";
-
+import { User } from "../../main/App";
 import styled from "styled-components";
-
+import { useNavigate } from "react-router-dom";
 export default function Login() {
+  const navigate = useNavigate();
+  const userData = useContext(User);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
+    if (userData.data.session == true) {
+      navigate("/Home");
+    }
     const getTout = setTimeout(() => {
       setLoaded(true);
     }, 300);
