@@ -30,6 +30,11 @@
   font-family: main_sb;
   src: url("./fonts/Quicksand-SemiBold.ttf");
 }
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -37,22 +42,7 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--bg);
-  padding: 20px;
-  min-height: 100vh;
-}
-
-#root {
-  height: 100%;
-  width: 100%;
-}
-
-.Content {
-  min-height: 100%;
-  width: 100%;
 }
 
 p {

@@ -1,11 +1,13 @@
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 
 const LogoElements = ({
   className,
   White,
+  sm,
 }: {
   className?: string;
   White?: boolean;
+  sm?: boolean;
 }) => (
   <div className={className}>
     {White ? (
@@ -58,8 +60,17 @@ export const Logo = styled(LogoElements)`
   gap: 10px;
   color: ${(props) => (props.White ? "var(--block)" : "var(--main)")};
   letter-spacing: 4px;
-  font-size: 32px;
+  font-size: ${(props) => (props.sm ? "24px" : "32px")};
   transition: opacity 1s;
+  ${(props) =>
+    props.sm
+      ? css`
+          svg {
+            height: 40px;
+            width: 45px;
+          }
+        `
+      : ""}
 `;
 
 const LoaderElements = ({

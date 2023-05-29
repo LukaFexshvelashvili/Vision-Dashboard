@@ -34,7 +34,7 @@ import Bg1 from "../../images/bg/objects/login1.png";
 import Bg2 from "../../images/bg/objects/login2.png";
 import { User } from "../../main/App";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate();
   const userData = useContext(User);
@@ -125,7 +125,10 @@ function SocialLogin() {
         </SocialButton>
       </SocialRow>
       <NotRegistered>
-        not registered yet? <Marked>Try Sign Up</Marked>
+        not registered yet?{" "}
+        <Marked>
+          <Link to={"/Register"}>Try Sign Up</Link>
+        </Marked>
       </NotRegistered>
       <CopyRight>© Copyright Vision 2023 </CopyRight>
     </SocialLoginContent>

@@ -173,7 +173,7 @@ export const SocialButton = styled.button`
 export const NotRegistered = styled.p`
   color: var(--nav-li);
 `;
-export const Marked = styled.a`
+export const Marked = styled.span`
   position: relative;
   display: inline-flex;
   justify-content: center;
