@@ -73,7 +73,8 @@ const NavContent = styled.nav`
   position: sticky;
   height: calc(100vh - 40px);
   top: 20px;
-  min-height: 880px;
+  min-height: 820px;
+  min-width: 290px;
   width: 290px;
   border-radius: 15px;
   background-color: var(--block);
@@ -94,13 +95,13 @@ const NavContentor = styled.div`
 const UlButtons = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 `;
 const LiButton = styled.li<{ activeLi: boolean }>`
   display: flex;
   align-items: center;
   color: ${(props) => (props.activeLi ? "var(--block)" : "var(--nav-li)")};
-  font-size: 16px;
+  font-size: 14px;
   font-family: main_m;
   font-weight: bold;
   letter-spacing: 3px;
@@ -108,7 +109,7 @@ const LiButton = styled.li<{ activeLi: boolean }>`
   display: flex;
   background-color: ${(props) =>
     props.activeLi ? "var(--main)" : "transparent"};
-  padding: 17px 0px 17px 25px;
+  padding: 15px 0px 15px 25px;
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
@@ -130,7 +131,7 @@ const Label = styled.p`
   font-weight: bold;
   letter-spacing: 2px;
   color: var(--input-placeholder);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-left: 20px;
 `;
 const NavControls = styled.div`

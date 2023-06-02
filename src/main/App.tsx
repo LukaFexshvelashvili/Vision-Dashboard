@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router";
 import Home from "../pages/home/Home";
 import { useLocation, useNavigate } from "react-router-dom";
 import Nav from "../styledComponents/main/Nav";
+import HeaderNav from "../styledComponents/main/HeaderNav";
 
 interface IUser {
   session: boolean;
@@ -39,14 +40,17 @@ function App() {
       <div className="Content">
         <User.Provider value={{ data: userSession, setData: setUserSession }}>
           {userSession.session === true ? <Nav /> : null}
-          <Routes>
-            <Route path="/">
-              <Route index element={<Home />} />
-              <Route path="Home" element={<Home />} />
-              <Route path="Login" element={<Login />} />
-              <Route path="Register" element={<Login />} />
-            </Route>
-          </Routes>
+          <div className="WebContentor">
+            <HeaderNav />
+            <Routes>
+              <Route path="/">
+                <Route index element={<Home />} />
+                <Route path="Home" element={<Home />} />
+                <Route path="Login" element={<Login />} />
+                <Route path="Register" element={<Login />} />
+              </Route>
+            </Routes>
+          </div>
         </User.Provider>
       </div>
     </>

@@ -3,7 +3,6 @@ import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 const LogoElements = ({
   className,
   White,
-  sm,
 }: {
   className?: string;
   White?: boolean;
@@ -59,15 +58,15 @@ export const Logo = styled(LogoElements)`
   font-family: logo_f;
   gap: 10px;
   color: ${(props) => (props.White ? "var(--block)" : "var(--main)")};
-  letter-spacing: 4px;
-  font-size: ${(props) => (props.sm ? "24px" : "32px")};
+  letter-spacing: ${(props) => (props.sm ? "3px" : "4px")};
+  font-size: ${(props) => (props.sm ? "22px" : "32px")};
   transition: opacity 1s;
   ${(props) =>
     props.sm
       ? css`
           svg {
-            height: 40px;
-            width: 45px;
+            height: 35px;
+            width: 40px;
           }
         `
       : ""}

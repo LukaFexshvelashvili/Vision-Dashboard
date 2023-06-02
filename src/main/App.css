@@ -40,9 +40,13 @@
   opacity: 0;
 }
 
+.WebContentor {
+  width: 100%;
+}
+
 .Content {
   display: flex;
-  align-items: center;
   min-height: 100vh;
   padding: 20px;
+  gap: 20px;
 }
