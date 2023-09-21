@@ -7,6 +7,9 @@ export const HomeContent = styled.div`
 
 export const ContentR7 = styled.div`
   min-width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `;
 
 export const ContentR3 = styled.div`
@@ -26,6 +29,24 @@ export const WelcomeBlock = styled.div`
   );
   border-radius: 18px;
 `;
+export const TransactionsBlock = styled.div`
+  background-color: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  height: 355px;
+  padding: 25px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    width: 10px;
+  }
+`;
 export const DecorImg = styled.img`
   position: absolute;
   right: 0px;
@@ -43,7 +64,7 @@ export const BlockRows = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 35px;
   flex-wrap: wrap;
 `;
 
@@ -53,7 +74,7 @@ export const BlockStat = styled.div`
   align-items: center;
   position: relative;
   height: 200px;
-  width: 240px;
+  width: 260px;
   transition: transform 0.4s;
 
   &:hover {
@@ -163,4 +184,41 @@ export const StatLast = styled.div`
   letter-spacing: 1.5px;
   font-size: 14px;
   color: #b8b8b8;
+`;
+
+export const StarterRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const TextSide = styled.p`
+  font-size: 18px;
+  font-family: main_m;
+  color: #000000;
+  font-weight: bold;
+  letter-spacing: 2px;
+`;
+
+export const Dots = () => (
+  <DotsBlock>
+    <Dot></Dot>
+    <Dot></Dot>
+    <Dot></Dot>
+  </DotsBlock>
+);
+
+const DotsBlock = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+  padding: 5px 0;
+`;
+const Dot = styled.span`
+  display: block;
+  height: 5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #8f8f8f;
 `;

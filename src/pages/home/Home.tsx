@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import ListRender from "../../assets/ListRender";
 import DecorImage from "../../images/bg/objects/welcomeBlock.png";
 import {
   BlockRows,
@@ -10,12 +10,16 @@ import {
   ContentR3,
   ContentR7,
   DecorImg,
+  Dots,
   HomeContent,
+  StarterRow,
   StatLabel,
   StatLast,
   StatPer,
   StatProgress,
   StatTimes,
+  TextSide,
+  TransactionsBlock,
   WelcomeBlock,
 } from "./HomeStyled";
 import WelcomeBlocks from "./assets/WelcomeBlocks";
@@ -62,6 +66,12 @@ export default function Home() {
             ))}
           </BlockRows>
         </WelcomeBlock>
+        <TransactionsBlock>
+          <StarterRow>
+            <TextSide>Latest Transactions</TextSide> <Dots />
+          </StarterRow>
+          <ListRender />
+        </TransactionsBlock>
       </ContentR7>
       <ContentR3></ContentR3>
     </HomeContent>
